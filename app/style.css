@@ -1,0 +1,108 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif; /* Use Lato font as default */
+    color: #333;
+    background-color: #f9f9f9; /* Light gray background */
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Home component styles */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Title and subtitle */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333; /* Dark text color */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #555; /* Darker gray for headings */
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Quotes and facts section */
+.quotes-facts {
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.quote,
+.fact {
+    font-size: 1.2rem;
+    color: #666; /* Lighter text color */
+    margin-bottom: 1rem;
+}
+
+.quote {
+    font-style: italic; /* Italics for quotes */
+}
+
+/* Slider section */
+.slider {
+    width: 100%;
+    max-width: 800px; /* Adjust width as needed */
+    margin-bottom: 2rem;
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.slick-dots li {
+    margin: 0 0.5rem;
+}
+
+/* Course holder section */
+.course-holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.course {
+    margin: 1rem;
+    padding: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(33.33% - 2rem); /* Adjust based on desired grid layout and number of courses per row */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
+    transition: all 0.2s ease-in-out; /* Smooth transition on hover */
+}
+
+.course:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+}
+
+.course img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Ensure images maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+}
