@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
+import styles from './page.module.css';
 
 interface TechNewsArticle {
     title: string;
@@ -127,52 +128,46 @@ const Page: React.FC = () => {
     };
 
     return (
-        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', boxSizing: 'border-box' }}>
-        {/* Word of the Day section */}
-        <div style={{ marginBottom: '40px', paddingBottom: '20px', borderBottom: '1px solid #ccc' }}>
-            <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#000', fontSize: '1rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Word of the Day: {word}</h2>
-            <div style={{ boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', transition: '0.3s', borderRadius: '5px', backgroundColor: '#fff', padding: '20px' }}>
-                <p style={{ textAlign: 'center' }}>Meaning: {meaning}</p>
+        <div className={styles.container}>
+            {/* Word of the Day section */}
+            <div className={styles.wordOfTheDaySection}>
+                <h2 className={styles.wordOfTheDayTitle}>Word of the Day: {word}</h2>
+                <div className={styles.wordOfTheDayBox}>
+                    <p>Meaning: {meaning}</p>
+                </div>
             </div>
-        </div>
-            <h1 style={{ textAlign: 'center', marginBottom: '20px', color: '#000', fontSize: '1rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Latest Tech News</h1>
+            <h1 className={styles.newsTitle}>Latest Tech News</h1>
 
-            <div style={{ marginBottom: '20px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+            {/* Category buttons */}
+            <div className={styles.categoryButtons}>
                 {categories.map((category, index) => (
                     <button
-                    key={index}
-                    onClick={() => handleCategoryClick(category)}
-                    style={{
-                        padding: '10px 20px',
-                        margin: '5px',
-                        backgroundColor: selectedCategory === category ? '#000' : '#ddd',
-                        color: selectedCategory === category ? '#fff' : '#333',
-                        border: 'none',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                        minWidth: '100px'
-                    }}
-                >
-                    {category}
-                </button>
-                
+                        key={index}
+                        onClick={() => handleCategoryClick(category)}
+                        className={`${styles.categoryButton} ${selectedCategory === category ? styles.categoryButtonActive : ''}`}
+                    >
+                        {category}
+                    </button>
                 ))}
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-    {techNews.map((article, index) => (
-        <div key={index} style={{ marginBottom: '20px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', borderRadius: '10px', overflow: 'hidden', width: '100%', maxWidth: '1000px', backgroundColor: '#fff' }}>
-            {article.urlToImage && <img style={{ width: '100%', height: '200px', objectFit: 'cover', marginBottom: '10px' }} src={article.urlToImage} alt={article.title} />}
-            <div style={{ padding: '15px', boxSizing: 'border-box' }}>
-                <h2 style={{ fontSize: '1.5rem', marginBottom: '10px', color: '#007bff', textAlign: 'center' }}>{article.title}</h2>
-                <p style={{ fontSize: '1.2rem', color: '#666', marginBottom: '10px', textAlign: 'center' }}>{article.description}</p>
-                <a style={{ fontSize: '1rem', color: '#007bff', textDecoration: 'none', fontWeight: 'bold', textAlign: 'center', display: 'block' }} href={article.url} target="_blank" rel="noopener noreferrer">
-                    Read more
-                </a>
-            </div>
-        </div>
-    ))}
-</div>
 
+            {/* News articles */}
+            <div>
+                {techNews.map((article, index) => (
+                    <div key={index} className={styles.newsArticle}>
+                        {article.urlToImage && (
+                            <img className={styles.articleImage} src={article.urlToImage} alt={article.title} />
+                        )}
+                        <div className={styles.articleContent}>
+                            <h2 className={styles.articleTitle}>{article.title}</h2>
+                            <p className={styles.articleDescription}>{article.description}</p>
+                            <a className={styles.articleLink} href={article.url} target="_blank" rel="noopener noreferrer">
+                                Read more
+                            </a>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

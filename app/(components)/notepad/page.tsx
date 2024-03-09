@@ -1,6 +1,4 @@
 'use client'
-// Notepad.tsx
-
 import { useState, ChangeEvent } from 'react';
 
 const Notepad = () => {
@@ -12,7 +10,7 @@ const Notepad = () => {
     };
 
     return (
-        <div style={{ position: 'fixed', bottom: '20px', right: '20px', backgroundColor: '#fff', border: '1px solid #ddd', borderRadius: '5px', padding: '10px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)' }}>
+        <div style={{ position: 'fixed', bottom: '150px', left: '50%', transform: 'translateX(-50%)', backgroundColor: '#fff', border: '1px solid #ddd', borderRadius: '5px', padding: '10px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)' }}>
             <h3 style={{ marginBottom: '10px' }}>Notepad</h3>
             <textarea
                 value={notes}
@@ -25,3 +23,4 @@ const Notepad = () => {
 };
 
 export default Notepad;
+

@@ -62,6 +62,41 @@ const Home: React.FC = () => {
                 title: 'Course 2',
                 description: 'Description for Course 2',
             },
+            {
+                image: 'slider2.png',
+                title: 'Course 2',
+                description: 'Description for Course 2',
+            },
+            {
+                image: 'slider2.png',
+                title: 'Course 2',
+                description: 'Description for Course 2',
+            },
+            {
+                image: 'slider2.png',
+                title: 'Course 2',
+                description: 'Description for Course 2',
+            },
+            {
+                image: 'slider2.png',
+                title: 'Course 2',
+                description: 'Description for Course 2',
+            },
+            {
+                image: 'slider2.png',
+                title: 'Course 2',
+                description: 'Description for Course 2',
+            },
+            {
+                image: 'slider2.png',
+                title: 'Course 2',
+                description: 'Description for Course 2',
+            },
+            {
+                image: 'slider2.png',
+                title: 'Course 2',
+                description: 'Description for Course 2',
+            },
            
         ];
         setCourses(fetchedCourses);
@@ -79,19 +114,20 @@ const Home: React.FC = () => {
 
     return (
         <div className="home">
+            
+
+            <Slider {...sliderSettings}>
+                <div>
+                    <img src="slider1.png" alt="Slider 1"/>
+                </div>
+                <div>
+                    <img src="slider2.png" alt="Slider 2" />
+                </div>
+            </Slider>
             <div className="quotes-facts">
                 <p className="quote">{quote}</p>
                 <p className="fact">{fact}</p>
             </div>
-
-            <Slider {...sliderSettings}>
-                <div>
-                    <img src="a.jpg" alt="Slider 1"/>
-                </div>
-                <div>
-                    <img src="b.jpg" alt="Slider 2" />
-                </div>
-            </Slider>
 
             <div className="course-holder">
                 {courses.map((course, index) => (
